@@ -83,9 +83,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="TrayIcon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

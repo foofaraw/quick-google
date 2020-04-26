@@ -5,9 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuickGoogle"
         mc:Ignorable="d"
-        Title="QuickGoogle" Height="100 " Width="600"
-        AllowsTransparency="True" WindowStyle="None" Background="Transparent" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="QuickGoogle" Height="30 " Width="600"
+        AllowsTransparency="True" WindowStyle="None" Background="Transparent" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
     <Grid>
-        <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Height="31" Margin="10,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="580"/>
+        <TextBox 
+            x:Name="InputTextBox" 
+            HorizontalAlignment="Left" 
+            Width="600" 
+            Height="30" 
+            Background="Transparent" 
+            Foreground="WhiteSmoke" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            FontFamily="Consolas" 
+            FontSize="20" 
+            TextAlignment="Center"
+            BorderThickness="0 0 0 1"
+            CaretBrush="WhiteSmoke"
+        />
     </Grid>
 </Window>

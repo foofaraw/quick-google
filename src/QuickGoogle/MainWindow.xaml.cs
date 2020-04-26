@@ -27,9 +27,10 @@ namespace QuickGoogle
         {
             InitializeComponent();
 
-            this.Loaded += OnWindowLoaded;
+            this.Loaded += (object sender, RoutedEventArgs e) => InputTextBox.Focus();
             this.KeyDown += new KeyEventHandler(OnKeyDown);
-            this.LostFocus += OnLostFocus;
+            this.LostFocus += (object sender, RoutedEventArgs args) => WindowToTray();
+            this.Deactivated += (object sender, EventArgs e) => WindowToTray();
 
             var notifyIcon = new System.Windows.Forms.NotifyIcon
             {
@@ -41,7 +42,6 @@ namespace QuickGoogle
             WindowState = WindowState.Minimized;
         }
 
-        #region OVERRIDE_EVENTS
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
@@ -62,18 +62,6 @@ namespace QuickGoogle
             NativeMethods.UnregisterHotKey();
             base.OnClosed(e);
         }
-        #endregion
-
-        #region EVENT_HANDLERS
-        private void OnWindowLoaded(object sender, RoutedEventArgs e)
-        {
-            InputTextBox.Focus();
-        }
-
-        private void OnLostFocus(object sender, RoutedEventArgs args)
-        {
-            WindowState = WindowState.Minimized;
-        }
 
         private void OnTrayIconDoubleClick(object sender, EventArgs args)
         {
@@ -86,7 +74,7 @@ namespace QuickGoogle
             switch (e.Key)
             {
                 case Key.Escape:
-                    Close();
+                    WindowToTray();
                     break;
 
                 case Key.Enter:
@@ -95,30 +83,22 @@ namespace QuickGoogle
                     break;
             }
         }
-        #endregion
 
-        #region PRIVATE_METHODS
         private void HandleSearch()
         {
-            string input = GetUserInput();
+            string input = InputTextBox.Text;
             if (!string.IsNullOrWhiteSpace(input))
             {
                 System.Diagnostics.Process.Start(GetGoogleSearchLink(input));
-                ClearUserInput();
-                // TODO: Close to tray
+                InputTextBox.Text = string.Empty;
+                WindowToTray();
             }
         }
 
-        private string GetUserInput()
-            => InputTextBox.Text;
+        private void WindowToTray()
+            => WindowState = WindowState.Minimized;
 
-        private void ClearUserInput()
-            => InputTextBox.Text = string.Empty;
-        #endregion
-
-        #region PRIVATE_STATIC_METHODS
         private static string GetGoogleSearchLink(string search)
-            => $@"http://www.google.com/search?q={search}";
-        #endregion
+            => $@"https://www.google.com/search?q={search}";
     }
 }
