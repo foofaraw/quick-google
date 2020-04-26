@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 
@@ -47,17 +43,22 @@ namespace QuickGoogle
         private static IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             const int WM_HOTKEY = 0x0312;
-
             if (msg == WM_HOTKEY && wParam.ToInt32() == HOTKEY_ID)
             {
                 int vkey = (((int)lParam >> 16) & 0xFFFF);
                 if (vkey == MOD_SPACE)
                 {
-                    _window.Activate();
-                    System.Diagnostics.Debug.WriteLine("COMBINATION DETECTED!!!");
+                    ActivateWindow();
                 }
             }
             return IntPtr.Zero;
+        }
+
+        private static void ActivateWindow()
+        {
+            _window.Activate();
+            _window.Show();
+            _window.WindowState = WindowState.Normal;
         }
     }
 }

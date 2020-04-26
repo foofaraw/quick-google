@@ -21,23 +21,40 @@ using System.Windows.Shapes;
 
 namespace QuickGoogle
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            this.Loaded += WindowLoaded;
-            this.KeyDown += new KeyEventHandler(HandleKeyDown);
+            this.Loaded += OnWindowLoaded;
+            this.KeyDown += new KeyEventHandler(OnKeyDown);
+            this.LostFocus += OnLostFocus;
+
+            var notifyIcon = new System.Windows.Forms.NotifyIcon
+            {
+                Icon = new System.Drawing.Icon("TrayIcon.ico"),
+                Visible = true
+            };
+            notifyIcon.DoubleClick += OnTrayIconDoubleClick;
+
+            WindowState = WindowState.Minimized;
         }
-        
+
+        #region OVERRIDE_EVENTS
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
             NativeMethods.RegisterHotKey(this);
+        }
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            if (WindowState == WindowState.Minimized)
+            {
+                Hide();
+            }
+            base.OnStateChanged(e);
         }
 
         protected override void OnClosed(EventArgs e)
@@ -45,13 +62,26 @@ namespace QuickGoogle
             NativeMethods.UnregisterHotKey();
             base.OnClosed(e);
         }
+        #endregion
 
-        private void WindowLoaded(object sender, RoutedEventArgs e)
+        #region EVENT_HANDLERS
+        private void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
             InputTextBox.Focus();
         }
 
-        private void HandleKeyDown(object sender, KeyEventArgs e)
+        private void OnLostFocus(object sender, RoutedEventArgs args)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void OnTrayIconDoubleClick(object sender, EventArgs args)
+        {
+            Show();
+            WindowState = WindowState.Normal;
+        }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
         {
             switch (e.Key)
             {
@@ -60,17 +90,21 @@ namespace QuickGoogle
                     break;
 
                 case Key.Enter:
+                    e.Handled = true;
                     HandleSearch();
                     break;
             }
         }
+        #endregion
 
+        #region PRIVATE_METHODS
         private void HandleSearch()
         {
             string input = GetUserInput();
             if (!string.IsNullOrWhiteSpace(input))
             {
                 System.Diagnostics.Process.Start(GetGoogleSearchLink(input));
+                ClearUserInput();
                 // TODO: Close to tray
             }
         }
@@ -78,10 +112,13 @@ namespace QuickGoogle
         private string GetUserInput()
             => InputTextBox.Text;
 
-        private string GetGoogleSearchLink(string search)
-            => $@"http://www.google.com/search?q={search}";
-
         private void ClearUserInput()
             => InputTextBox.Text = string.Empty;
+        #endregion
+
+        #region PRIVATE_STATIC_METHODS
+        private static string GetGoogleSearchLink(string search)
+            => $@"http://www.google.com/search?q={search}";
+        #endregion
     }
 }
