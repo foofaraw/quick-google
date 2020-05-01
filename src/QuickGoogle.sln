@@ -5,16 +5,30 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGoogle", "QuickGoogle\QuickGoogle.csproj", "{7B323758-21D4-4E87-95A6-F1A1784F37B5}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuickGoogleSetup", "QuickGoogleSetup\QuickGoogleSetup.vdproj", "{188E3395-D084-425C-B623-CEF13F5385BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|x86.Build.0 = Debug|Any CPU
 		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|x86.Build.0 = Release|Any CPU
+		{188E3395-D084-425C-B623-CEF13F5385BD}.Debug|Any CPU.ActiveCfg = Debug
+		{188E3395-D084-425C-B623-CEF13F5385BD}.Debug|x86.ActiveCfg = Debug
+		{188E3395-D084-425C-B623-CEF13F5385BD}.Debug|x86.Build.0 = Debug
+		{188E3395-D084-425C-B623-CEF13F5385BD}.Release|Any CPU.ActiveCfg = Release
+		{188E3395-D084-425C-B623-CEF13F5385BD}.Release|x86.ActiveCfg = Release
+		{188E3395-D084-425C-B623-CEF13F5385BD}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

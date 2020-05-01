@@ -47,14 +47,14 @@ namespace QuickGoogle
         {
             var notifyIcon = new System.Windows.Forms.NotifyIcon
             {
-                Icon = new System.Drawing.Icon("quick-google-icon.ico"),
+                Icon = new System.Drawing.Icon("appicon.ico"),
                 Visible = true,
                 ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(),
             };
 
             notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (object sender, EventArgs e) => Close());
 
-            notifyIcon.DoubleClick += (object sender, EventArgs args) =>
+            notifyIcon.DoubleClick += (object sender, EventArgs e) =>
             {
                 Show();
                 WindowState = WindowState.Normal;
