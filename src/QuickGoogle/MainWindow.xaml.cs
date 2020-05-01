@@ -1,23 +1,6 @@
-﻿// Remaining work
-// TODO: Keep the application in tray (start in tray as well)
-// TODO: Stylize the textbox
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace QuickGoogle
 {
@@ -29,12 +12,12 @@ namespace QuickGoogle
 
             this.Loaded += (object sender, RoutedEventArgs e) => InputTextBox.Focus();
             this.KeyDown += new KeyEventHandler(OnKeyDown);
-            this.LostFocus += (object sender, RoutedEventArgs args) => WindowToTray();
-            this.Deactivated += (object sender, EventArgs e) => WindowToTray();
+            this.LostFocus += (object sender, RoutedEventArgs args) => OnLostFocus();
+            this.Deactivated += (object sender, EventArgs e) => OnLostFocus();
 
             var notifyIcon = new System.Windows.Forms.NotifyIcon
             {
-                Icon = new System.Drawing.Icon("TrayIcon.ico"),
+                Icon = new System.Drawing.Icon("quick-google-icon.ico"),
                 Visible = true
             };
             notifyIcon.DoubleClick += OnTrayIconDoubleClick;
@@ -51,9 +34,7 @@ namespace QuickGoogle
         protected override void OnStateChanged(EventArgs e)
         {
             if (WindowState == WindowState.Minimized)
-            {
                 Hide();
-            }
             base.OnStateChanged(e);
         }
 
@@ -90,13 +71,22 @@ namespace QuickGoogle
             if (!string.IsNullOrWhiteSpace(input))
             {
                 System.Diagnostics.Process.Start(GetGoogleSearchLink(input));
-                InputTextBox.Text = string.Empty;
+                ClearInput();
                 WindowToTray();
             }
         }
 
+        private void OnLostFocus()
+        {
+            WindowToTray();
+            ClearInput();
+        }
+
         private void WindowToTray()
             => WindowState = WindowState.Minimized;
+
+        private void ClearInput()
+            => InputTextBox.Text = string.Empty;
 
         private static string GetGoogleSearchLink(string search)
             => $@"https://www.google.com/search?q={search}";
