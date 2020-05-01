@@ -47,7 +47,9 @@ namespace QuickGoogle
             {
                 int vkey = (((int)lParam >> 16) & 0xFFFF);
                 if (vkey == MOD_SPACE)
+                {
                     ActivateWindow();
+                }
             }
             return IntPtr.Zero;
         }

@@ -9,20 +9,9 @@ namespace QuickGoogle
         public MainWindow()
         {
             InitializeComponent();
-
-            this.Loaded += (object sender, RoutedEventArgs e) => InputTextBox.Focus();
-            this.KeyDown += new KeyEventHandler(OnKeyDown);
-            this.LostFocus += (object sender, RoutedEventArgs args) => OnLostFocus();
-            this.Deactivated += (object sender, EventArgs e) => OnLostFocus();
-
-            var notifyIcon = new System.Windows.Forms.NotifyIcon
-            {
-                Icon = new System.Drawing.Icon("quick-google-icon.ico"),
-                Visible = true
-            };
-            notifyIcon.DoubleClick += OnTrayIconDoubleClick;
-
-            WindowState = WindowState.Minimized;
+            InitializeEvents();
+            InitializeTrayIcon();
+            ClearAndMinimize();
         }
 
         protected override void OnSourceInitialized(EventArgs e)
@@ -34,7 +23,9 @@ namespace QuickGoogle
         protected override void OnStateChanged(EventArgs e)
         {
             if (WindowState == WindowState.Minimized)
+            {
                 Hide();
+            }
             base.OnStateChanged(e);
         }
 
@@ -44,51 +35,72 @@ namespace QuickGoogle
             base.OnClosed(e);
         }
 
-        private void OnTrayIconDoubleClick(object sender, EventArgs args)
+        private void InitializeEvents()
         {
-            Show();
-            WindowState = WindowState.Normal;
+            Loaded += (object sender, RoutedEventArgs e) => InputTextBox.Focus();
+            KeyDown += new KeyEventHandler(OnKeyDown);
+            LostFocus += new RoutedEventHandler(OnLostFocus);
+            Deactivated += new EventHandler(OnLostFocus);
+        }
+
+        private void InitializeTrayIcon()
+        {
+            var notifyIcon = new System.Windows.Forms.NotifyIcon
+            {
+                Icon = new System.Drawing.Icon("quick-google-icon.ico"),
+                Visible = true
+            };
+
+            notifyIcon.DoubleClick += (object sender, EventArgs args) =>
+            {
+                Show();
+                WindowState = WindowState.Normal;
+            };
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
+            if (e.Key == Key.Enter)
             {
-                case Key.Escape:
-                    WindowToTray();
-                    break;
-
-                case Key.Enter:
-                    e.Handled = true;
-                    HandleSearch();
-                    break;
+                e.Handled = true;
+                try
+                {
+                    if (RunSearch(InputTextBox.Text))
+                    {
+                        ClearAndMinimize();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    InputTextBox.Text = ex.Message;
+                }
+            }
+            else if (e.Key == Key.Escape)
+            {
+                ClearAndMinimize();
             }
         }
 
-        private void HandleSearch()
+        private void OnLostFocus<T>(object sender, T e) where T : EventArgs
         {
-            string input = InputTextBox.Text;
+            ClearAndMinimize();
+        }
+
+        private bool RunSearch(string input)
+        {
+            bool result = false;
             if (!string.IsNullOrWhiteSpace(input))
             {
-                System.Diagnostics.Process.Start(GetGoogleSearchLink(input));
-                ClearInput();
-                WindowToTray();
+                System.Diagnostics.Process.Start($@"https://www.google.com/search?q={input}");
+                result = true;
             }
+            return result;
         }
 
-        private void OnLostFocus()
+        private void ClearAndMinimize()
         {
-            WindowToTray();
-            ClearInput();
+            InputTextBox.Text = string.Empty;
+            WindowState = WindowState.Minimized;
         }
-
-        private void WindowToTray()
-            => WindowState = WindowState.Minimized;
-
-        private void ClearInput()
-            => InputTextBox.Text = string.Empty;
-
-        private static string GetGoogleSearchLink(string search)
-            => $@"https://www.google.com/search?q={search}";
     }
 }
