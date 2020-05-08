@@ -6,6 +6,8 @@ namespace QuickGoogle
 {
     public partial class MainWindow : Window
     {
+        uint hotKey1;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -17,7 +19,18 @@ namespace QuickGoogle
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
-            NativeMethods.RegisterHotKey(this);
+            var _hotKeys = new HotKeyHelper(this, HandleHotKey);
+            hotKey1 = _hotKeys.ListenForHotKey(System.Windows.Forms.Keys.Space, HotKeyModifiers.Control);
+        }
+
+        void HandleHotKey(int keyId)
+        {
+            if (keyId == hotKey1)
+            {
+                Activate();
+                Show();
+                WindowState = WindowState.Normal;
+            }
         }
 
         protected override void OnStateChanged(EventArgs e)
@@ -27,12 +40,6 @@ namespace QuickGoogle
                 Hide();
             }
             base.OnStateChanged(e);
-        }
-
-        protected override void OnClosed(EventArgs e)
-        {
-            NativeMethods.UnregisterHotKey();
-            base.OnClosed(e);
         }
 
         private void InitializeEvents()

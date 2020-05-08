@@ -15,14 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1FD74CEEFD864D6DBEC4BBB02796B3A9"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_20FC7C55DDDDEF7074295FA90D29EA5C"
+        "OwnerKey" = "8:_540E305CF42F45CCBBCD77ED54DBE275"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_20FC7C55DDDDEF7074295FA90D29EA5C"
-        "OwnerKey" = "8:_1FD74CEEFD864D6DBEC4BBB02796B3A9"
+        "MsmKey" = "8:_540E305CF42F45CCBBCD77ED54DBE275"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1FD74CEEFD864D6DBEC4BBB02796B3A9"
+        "OwnerKey" = "8:_540E305CF42F45CCBBCD77ED54DBE275"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -61,6 +61,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -77,6 +93,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.8"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.8 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.8"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -225,7 +257,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Quick Google"
         "ProductCode" = "8:{02822B8A-0859-47A7-8B90-CBD16F6AB109}"
-        "PackageCode" = "8:{0C78362A-81F9-4309-A40A-409BF2BDA4B6}"
+        "PackageCode" = "8:{84706B46-4F36-4F8E-9F74-9CB3F8CE70B0}"
         "UpgradeCode" = "8:{4409BC41-6860-4885-ACEF-C4551EF68CE9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -233,7 +265,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:foofaraw"
+        "Manufacturer" = "8:Quick Google"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:QuickGoogle"
@@ -242,7 +274,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Quick Google by Ctrl + Space"
         "ARPURLINFOABOUT" = "8:https://danielak.dev"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_66C9999D3CBC43288C486F5CDB56761F"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -345,7 +377,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D77F16118D424B8AA5B2A3D4607A3D13"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_61BF57B0220D460F82BC106A53EA32AE"
             {
             "Name" = "8:QuickGoogle"
             "Arguments" = "8:"
@@ -353,13 +385,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1FD74CEEFD864D6DBEC4BBB02796B3A9"
-            "Folder" = "8:_5490D1D7E9D841ECA055C561A35DD0FA"
+            "Target" = "8:_540E305CF42F45CCBBCD77ED54DBE275"
+            "Folder" = "8:_AFD40DDED8804B5483A1CF4E1F7CAC2D"
             "WorkingFolder" = "8:_3FD909653CB74DACAAFB5FC76336DABB"
-            "Icon" = "8:"
+            "Icon" = "8:_66C9999D3CBC43288C486F5CDB56761F"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EB97B8C532574EA0BBCB9A82B54A8815"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C3DB1C49B05B4E13BCA195DA9C06F235"
             {
             "Name" = "8:QuickGoogle"
             "Arguments" = "8:"
@@ -367,8 +399,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1FD74CEEFD864D6DBEC4BBB02796B3A9"
-            "Folder" = "8:_AFD40DDED8804B5483A1CF4E1F7CAC2D"
+            "Target" = "8:_540E305CF42F45CCBBCD77ED54DBE275"
+            "Folder" = "8:_5490D1D7E9D841ECA055C561A35DD0FA"
             "WorkingFolder" = "8:_3FD909653CB74DACAAFB5FC76336DABB"
             "Icon" = "8:"
             "Feature" = "8:"
@@ -772,7 +804,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1FD74CEEFD864D6DBEC4BBB02796B3A9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_540E305CF42F45CCBBCD77ED54DBE275"
             {
             "SourcePath" = "8:..\\QuickGoogle\\obj\\Release\\QuickGoogle.exe"
             "TargetName" = "8:"
@@ -794,6 +826,34 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:Release|Any CPU"
             "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{7B323758-21D4-4E87-95A6-F1A1784F37B5}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A3DB9A18E64B422CAFD5BF0C0179B873"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3FD909653CB74DACAAFB5FC76336DABB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Release|Any CPU"
+            "OutputGroupCanonicalName" = "8:LocalizedResourceDlls"
             "OutputProjectGuid" = "8:{7B323758-21D4-4E87-95A6-F1A1784F37B5}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
