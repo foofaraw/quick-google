@@ -2,8 +2,10 @@
 ![App Preview](preview.gif)
 
 ### Installation
-1. Download setup.exe from [WeTransfer](https://we.tl/t-QwOP3FNUvf) or repository setup folder.
+1. Download installer from [WeTransfer](https://we.tl/t-ZUY4DMSaPc) or repository setup folder.
 2. Run it and follow the wizard.
 3. Open the app from Start Menu. 
 
-It will now sit in your system tray and listen for hotkey.
+App will now run at startup and sit in your system tray waiting for hotkey.
+
+_Kudos to [this](http://www.pinvoke.net/default.aspx/user32/registerhotkey.html) article's author and contributors._
