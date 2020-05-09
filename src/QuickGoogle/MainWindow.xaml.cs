@@ -30,6 +30,8 @@ namespace QuickGoogle
                 Activate();
                 Show();
                 WindowState = WindowState.Normal;
+                Left = (SystemParameters.PrimaryScreenWidth / 2) - (Width / 2);
+                Top = (SystemParameters.PrimaryScreenHeight / 2) - (Height / 2);
             }
         }
 
