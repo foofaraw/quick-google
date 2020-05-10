@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Interop;
 
-namespace QuickGoogle
+namespace QuickGoogleWpf
 {
     /// <summary>
     /// Simpler way to expose key modifiers
