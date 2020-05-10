@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QuickGoogle
+namespace QuickGoogleWpf
 {
     [Flags]
     public enum KeyModifiers

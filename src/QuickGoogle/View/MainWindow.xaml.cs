@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace QuickGoogle
+namespace QuickGoogleWpf
 {
     public partial class MainWindow : Window
     {
