@@ -163,6 +163,17 @@
         }
         "Folder"
         {
+            "{1525181F-901A-416C-8A58-119130FE478E}:_5D800493B6D343D9AD9CE682F1F903BC"
+            {
+            "Name" = "8:#1928"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:StartupFolder"
+                "Folders"
+                {
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_5D995441C92D4E84AB7FB2BA663A45AD"
             {
             "Name" = "8:#1919"
@@ -334,6 +345,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B58EB91943C946298634438F03CB9151"
+            {
+            "Name" = "8:Quick Google"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_8A236456FEAE49A681C8A5F11B7EA073"
+            "Folder" = "8:_5D995441C92D4E84AB7FB2BA663A45AD"
+            "WorkingFolder" = "8:_6D5BE2B6F5A9434394A9BD2201646F95"
+            "Icon" = "8:_A6E5D00BABAD4E358BE3928BDADF791A"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E2AFCC0854DB4763B98564399F7B5390"
+            {
+            "Name" = "8:Quick Google"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_8A236456FEAE49A681C8A5F11B7EA073"
+            "Folder" = "8:_5D800493B6D343D9AD9CE682F1F903BC"
+            "WorkingFolder" = "8:_6D5BE2B6F5A9434394A9BD2201646F95"
+            "Icon" = "8:_A6E5D00BABAD4E358BE3928BDADF791A"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
