@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickGoogle.HotkeyRegistration;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -56,13 +57,20 @@ namespace QuickGoogleWpf
         {
             var notifyIcon = new System.Windows.Forms.NotifyIcon
             {
-                Icon = new System.Drawing.Icon("appicon.ico"),
                 Visible = true,
                 ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(),
             };
 
-            notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (object sender, EventArgs e) => Close());
+            try
+            {
+                notifyIcon.Icon = new System.Drawing.Icon("appicon.ico");
+            }
+            catch (Exception)
+            {
+                notifyIcon.Icon = default;
+            }
 
+            notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (object sender, EventArgs e) => Close());
             notifyIcon.DoubleClick += (object sender, EventArgs e) =>
             {
                 Show();

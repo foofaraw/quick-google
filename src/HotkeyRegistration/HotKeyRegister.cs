@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Windows.Forms;
 
-namespace QuickGoogleWpf
+namespace QuickGoogle.HotkeyRegistration
 {
     public class HotKeyRegister : IMessageFilter, IDisposable
     {

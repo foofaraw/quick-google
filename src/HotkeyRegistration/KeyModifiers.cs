@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QuickGoogleWpf
+namespace QuickGoogle.HotkeyRegistration
 {
     [Flags]
     public enum KeyModifiers

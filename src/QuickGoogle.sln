@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGoogle", "QuickGoogle\QuickGoogle.csproj", "{7B323758-21D4-4E87-95A6-F1A1784F37B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGoogleWpf", "QuickGoogleWpf\QuickGoogleWpf.csproj", "{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuickGoogleSetup", "QuickGoogleSetup\QuickGoogleSetup.vdproj", "{188E3395-D084-425C-B623-CEF13F5385BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeyRegistration", "HotkeyRegistration\HotkeyRegistration.csproj", "{3838EC2B-66A3-4E92-9F00-93FAB20BC367}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuickGoogleSetup", "QuickGoogleSetup\QuickGoogleSetup.vdproj", "{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +17,26 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Debug|x86.Build.0 = Debug|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|x86.ActiveCfg = Release|Any CPU
-		{7B323758-21D4-4E87-95A6-F1A1784F37B5}.Release|x86.Build.0 = Release|Any CPU
-		{188E3395-D084-425C-B623-CEF13F5385BD}.Debug|Any CPU.ActiveCfg = Debug
-		{188E3395-D084-425C-B623-CEF13F5385BD}.Debug|x86.ActiveCfg = Debug
-		{188E3395-D084-425C-B623-CEF13F5385BD}.Debug|x86.Build.0 = Debug
-		{188E3395-D084-425C-B623-CEF13F5385BD}.Release|Any CPU.ActiveCfg = Release
-		{188E3395-D084-425C-B623-CEF13F5385BD}.Release|x86.ActiveCfg = Release
-		{188E3395-D084-425C-B623-CEF13F5385BD}.Release|x86.Build.0 = Release
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F44E103-DAD8-4F7E-9D03-FB95E349C5AB}.Release|x86.Build.0 = Release|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Debug|x86.Build.0 = Debug|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|x86.ActiveCfg = Release|Any CPU
+		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|x86.Build.0 = Release|Any CPU
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Debug|Any CPU.ActiveCfg = Debug
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Debug|x86.ActiveCfg = Debug
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Release|Any CPU.ActiveCfg = Release
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
