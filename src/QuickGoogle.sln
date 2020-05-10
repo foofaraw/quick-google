@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGoogleWpf", "QuickGoog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeyRegistration", "HotkeyRegistration\HotkeyRegistration.csproj", "{3838EC2B-66A3-4E92-9F00-93FAB20BC367}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuickGoogleSetup", "QuickGoogleSetup\QuickGoogleSetup.vdproj", "{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|x86.ActiveCfg = Release|Any CPU
 		{3838EC2B-66A3-4E92-9F00-93FAB20BC367}.Release|x86.Build.0 = Release|Any CPU
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Debug|Any CPU.ActiveCfg = Debug
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Debug|x86.ActiveCfg = Debug
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Release|Any CPU.ActiveCfg = Release
+		{CAEA8FBD-3C6C-4EF0-ACE1-DFD9D2F9F42D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
