@@ -21,20 +21,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3840FA968A4680F20ED69703041883B1"
-        "OwnerKey" = "8:_8A236456FEAE49A681C8A5F11B7EA073"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8A236456FEAE49A681C8A5F11B7EA073"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3840FA968A4680F20ED69703041883B1"
+        "MsmKey" = "8:_A6E5D00BABAD4E358BE3928BDADF791A"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -143,21 +137,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3840FA968A4680F20ED69703041883B1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6E5D00BABAD4E358BE3928BDADF791A"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_3840FA968A4680F20ED69703041883B1"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\QuickGoogleWpf\\appicon.ico"
+            "TargetName" = "8:appicon.ico"
             "Tag" = "8:"
             "Folder" = "8:_6D5BE2B6F5A9434394A9BD2201646F95"
             "Condition" = "8:"
@@ -171,7 +154,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -231,7 +214,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QuickGoogleSetup"
         "ProductCode" = "8:{34A2DD0C-675A-4D71-A7BA-EB2B6C1204B5}"
-        "PackageCode" = "8:{B73A1EE9-40CC-4E3B-A097-406323E732BC}"
+        "PackageCode" = "8:{0362B341-2FA2-43C7-85A2-B31F6517A972}"
         "UpgradeCode" = "8:{EC5D4DD0-A741-491C-9B6C-1D4AF334D9EA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
