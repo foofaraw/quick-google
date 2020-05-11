@@ -7,7 +7,7 @@ namespace QuickGoogleWpf
 {
     public partial class MainWindow : Window
     {
-        uint hotKey1;
+        private uint _hotKey;
 
         public MainWindow()
         {
@@ -21,19 +21,8 @@ namespace QuickGoogleWpf
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
-            var _hotKeys = new HotKeyHelper(this, HandleHotKey);
-            hotKey1 = _hotKeys.ListenForHotKey(System.Windows.Forms.Keys.Space, HotKeyModifiers.Control);
-        }
-
-        void HandleHotKey(int keyId)
-        {
-            if (keyId == hotKey1)
-            {
-                Activate();
-                Show();
-                WindowState = WindowState.Normal;
-                Center();
-            }
+            var _hotKeys = new HotKeyHelper(this, OnHotKeyDown);
+            _hotKey = _hotKeys.ListenForHotKey(System.Windows.Forms.Keys.Space, HotKeyModifiers.Control);
         }
 
         protected override void OnStateChanged(EventArgs e)
@@ -78,6 +67,17 @@ namespace QuickGoogleWpf
             };
         }
 
+        private void OnHotKeyDown(int keyId)
+        {
+            if (keyId == _hotKey)
+            {
+                Activate();
+                Show();
+                WindowState = WindowState.Normal;
+                Center();
+            }
+        }
+
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -85,7 +85,7 @@ namespace QuickGoogleWpf
                 e.Handled = true;
                 try
                 {
-                    if (RunSearch(InputTextBox.Text))
+                    if (SearchHelper.RunSearch(InputTextBox.Text))
                     {
                         ClearAndMinimize();
                     }
@@ -104,17 +104,6 @@ namespace QuickGoogleWpf
         private void OnLostFocus<T>(object sender, T e) where T : EventArgs
         {
             ClearAndMinimize();
-        }
-
-        private bool RunSearch(string input)
-        {
-            bool result = false;
-            if (!string.IsNullOrWhiteSpace(input))
-            {
-                System.Diagnostics.Process.Start($@"https://www.google.com/search?q={input}");
-                result = true;
-            }
-            return result;
         }
 
         private void ClearAndMinimize()
