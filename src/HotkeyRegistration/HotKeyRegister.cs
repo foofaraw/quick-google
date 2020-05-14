@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace QuickGoogle.HotkeyRegistration
 {
@@ -32,7 +33,7 @@ namespace QuickGoogle.HotkeyRegistration
         /// <param name="vk">The virtual-key code of the hot key.</param>
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern bool RegisterHotKey(IntPtr hWnd, int id,
-            KeyModifiers fsModifiers, Keys vk);
+            ModifierKeys fsModifiers, Keys vk);
 
         /// <summary>
         /// Frees a hot key previously registered by the calling thread.
@@ -55,16 +56,16 @@ namespace QuickGoogle.HotkeyRegistration
         /// with modifiers.
         /// </param>
         /// <param name="key">The pressed key.</param>
-        public static KeyModifiers GetModifiers(Keys keydata, out Keys key)
+        public static ModifierKeys GetModifiers(Keys keydata, out Keys key)
         {
             key = keydata;
-            KeyModifiers modifers = KeyModifiers.None;
+            ModifierKeys modifers = ModifierKeys.None;
 
             // Check whether the keydata contains the CTRL modifier key.
             // The value of Keys.Control is 131072.
             if ((keydata & Keys.Control) == Keys.Control)
             {
-                modifers |= KeyModifiers.Control;
+                modifers |= ModifierKeys.Control;
 
                 key = keydata ^ Keys.Control;
             }
@@ -73,7 +74,7 @@ namespace QuickGoogle.HotkeyRegistration
             // The value of Keys.Control is 65536.
             if ((keydata & Keys.Shift) == Keys.Shift)
             {
-                modifers |= KeyModifiers.Shift;
+                modifers |= ModifierKeys.Shift;
                 key = key ^ Keys.Shift;
             }
 
@@ -81,7 +82,7 @@ namespace QuickGoogle.HotkeyRegistration
             // The value of Keys.Control is 262144.
             if ((keydata & Keys.Alt) == Keys.Alt)
             {
-                modifers |= KeyModifiers.Alt;
+                modifers |= ModifierKeys.Alt;
                 key = key ^ Keys.Alt;
             }
 
@@ -119,7 +120,7 @@ namespace QuickGoogle.HotkeyRegistration
         /// </summary>
         public int ID { get; private set; }
 
-        public KeyModifiers Modifiers { get; private set; }
+        public ModifierKeys Modifiers { get; private set; }
 
         public Keys Key { get; private set; }
 
@@ -129,9 +130,9 @@ namespace QuickGoogle.HotkeyRegistration
         public event EventHandler HotKeyPressed;
 
 
-        public HotKeyRegister(IntPtr handle, int id, KeyModifiers modifiers, Keys key)
+        public HotKeyRegister(IntPtr handle, int id, ModifierKeys modifiers, Keys key)
         {
-            if (key == Keys.None || modifiers == KeyModifiers.None)
+            if (key == Keys.None || modifiers == ModifierKeys.None)
             {
                 throw new ArgumentException("The key or modifiers could not be None.");
             }

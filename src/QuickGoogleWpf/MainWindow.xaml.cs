@@ -22,7 +22,7 @@ namespace QuickGoogleWpf
         {
             base.OnSourceInitialized(e);
             var _hotKeys = new HotKeyHelper(this, OnHotKeyDown);
-            _hotKey = _hotKeys.ListenForHotKey(System.Windows.Forms.Keys.Space, HotKeyModifiers.Control);
+            _hotKey = _hotKeys.ListenForHotKey(System.Windows.Forms.Keys.Space, ModifierKeys.Control);
         }
 
         protected override void OnStateChanged(EventArgs e)

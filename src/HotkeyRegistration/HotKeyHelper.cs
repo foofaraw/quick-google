@@ -4,21 +4,10 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Interop;
+using System.Windows.Input;
 
 namespace QuickGoogle.HotkeyRegistration
 {
-    /// <summary>
-    /// Simpler way to expose key modifiers
-    /// </summary>
-    [Flags]
-    public enum HotKeyModifiers
-    {
-        Alt = 1,        // MOD_ALT
-        Control = 2,    // MOD_CONTROL
-        Shift = 4,      // MOD_SHIFT
-        WindowsKey = 8,     // MOD_WIN
-    }
-
     // --------------------------------------------------------------------------
     /// <summary>
     /// A nice generic class to register multiple hotkeys for your app
@@ -100,7 +89,7 @@ namespace QuickGoogle.HotkeyRegistration
         /// disambiguate what key was pressed.
         /// </summary>
         // --------------------------------------------------------------------------
-        public uint ListenForHotKey(Keys key, HotKeyModifiers modifiers)
+        public uint ListenForHotKey(Keys key, ModifierKeys modifiers)
         {
             RegisterHotKey(_windowHandle, HotkeyID, (uint)modifiers, (uint)key);
             return (uint)modifiers | (((uint)key) << 16);

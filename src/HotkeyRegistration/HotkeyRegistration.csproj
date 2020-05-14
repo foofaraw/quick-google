@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="HotKeyHelper.cs" />
     <Compile Include="HotKeyRegister.cs" />
-    <Compile Include="KeyModifiers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,7 +13,6 @@
         ShowInTaskbar="False" 
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" 
-        Topmost="True" 
         Opacity="0.65">
     <TextBox 
         x:Name="InputTextBox" 
@@ -25,7 +24,8 @@
         TextWrapping="NoWrap"
         AcceptsReturn="False"
         Text="" 
-        VerticalAlignment="Top" 
+        VerticalAlignment="Top"
+        VerticalContentAlignment="Center"
         FontFamily="Consolas" 
         FontSize="20" 
         TextAlignment="Center"
