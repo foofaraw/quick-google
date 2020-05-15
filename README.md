@@ -2,7 +2,7 @@
 ![App Preview](preview.gif)
 
 ### Installation
-1. Download installer from [WeTransfer](https://we.tl/t-B28y3lCnH8) or repository setup folder.
+1. Download installer from [WeTransfer](https://we.tl/t-ivNSq5fSfW) or repository setup folder.
 2. Run it and follow the wizard.
 3. Open the app from Start Menu. 
 
